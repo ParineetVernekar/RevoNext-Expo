@@ -19,17 +19,17 @@ import { useMediaQuery } from 'react-responsive'
 
 
 function Item ({ item })  {
-    // const navigation = useNavigation(); // navigation hook
+    const navigation = useNavigation(); // navigation hook
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 717px)'
       })
 return(
     <TouchableOpacity
         onPress={()=>{
-            // alert(`Hey ${item.name}`)
-            // navigation.navigate('BottleDetailsModal', {
-            //     bottle: item
-            // })
+            alert(`Hey ${item.name}`)
+            navigation.navigate('BottleDetailsModal', {
+                bottle: item
+            })
         }
         }
     >
@@ -49,30 +49,30 @@ return(
     </TouchableOpacity>
 )
 };
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
     // const { signOut } = React.useContext(AuthContext);
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 717px)'
       })
       const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
 
-    // React.useLayoutEffect(() => {
-    //     navigation.setOptions({
-    //         headerRight: () => (
-    //             <TouchableOpacity
-    //                 // onPress={() => navigation.navigate('AccountScreen')}
-    //             >
-    //                 <View style={{ margin: 15 }}
-    //                 >
-    //                     <FontAwesome5 name="user" size={25} />
-    //                 </View>
-    //             </TouchableOpacity>
-    //         ),
-    //     });
-    // }, [navigation]);
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('AccountScreen')}
+                >
+                    <View style={{ margin: 15 }}
+                    >
+                        <Text>Account</Text>
+                    </View>
+                </TouchableOpacity>
+            ),
+        });
+    }, [navigation]);
 
     const renderItem = ({ item }) => (
-        <Item item={item}  />
+        <Item item={item} />
     );
 
     return (
@@ -100,7 +100,7 @@ export default function HomeScreen() {
                     </View>
 
 
-                    <View style={isDesktopOrLaptop || (!isPortrait && isDesktopOrLaptop) ? { flexDirection: 'row', borderColor: 'red', borderWidth: 2} : null}>
+                    <View style={isDesktopOrLaptop || (!isPortrait && isDesktopOrLaptop) ? { flexDirection: 'row'} : null}>
                     <FlatList
                         data={bottleData}
                         renderItem={renderItem}
@@ -112,7 +112,7 @@ export default function HomeScreen() {
                     </View>
                     <View style={ isDesktopOrLaptop || (!isPortrait && isDesktopOrLaptop) ? {paddingRight:20} : null}>
 
-                    <AddNewBottle destination={'BarcodeScanner'} />
+                    <AddNewBottle destination={'BarcodeScanner'} navigation={navigation}/>
                     <FindRefillStation destination={'FindRefillStation'} />
                     </View>
         </View>

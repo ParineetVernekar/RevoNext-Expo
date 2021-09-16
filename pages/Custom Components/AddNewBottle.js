@@ -2,11 +2,11 @@ import React from 'react';
 import {Text, View, TouchableOpacity, Image } from 'react-native';
 import { styles } from '../StyleSheet';
 
-export default function AddNewBottle({ destination}){
+export default function AddNewBottle({ navigation, destination}){
     return(
         <TouchableOpacity
                         style={styles.addBottleButton}
-                        // onPress={() => navigation.navigate(destination)}
+                        onPress={() => navigation.navigate(destination)}
                     >
                         <View style={styles.addbottlebuttonSubView}>
                             <View>

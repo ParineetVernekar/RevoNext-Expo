@@ -2,11 +2,11 @@ import React from 'react';
 import {Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import { Divider } from 'react-native-paper';
 import { styles } from '../StyleSheet';
-// import AuthContext from '../AuthContext';
+import AuthContext from '../../AuthContext';
 export default function OTPScreen({ route, navigation }) {
-    // const { signIn } = React.useContext(AuthContext);
+    const { signIn } = React.useContext(AuthContext);
 
-    // const { phoneNumber } = route.params;
+    const { phoneNumber } = route.params;
     const [otp, onChangeOtp] = React.useState('');
     const buttonDisabled = otp.length < 4 ? styles.verifyPhoneNumberButtonBackgroundDisabled : styles.verifyPhoneNumberButtonBackground
 
@@ -30,10 +30,10 @@ export default function OTPScreen({ route, navigation }) {
           <Divider style={styles.enterPhoneNumberDividerStyle} />
   
           <View>
-            <TouchableOpacity style={[buttonDisabled, styles.verifyPhoneNumberButton]}>
-        {/* //    onPress={() => signIn({ phoneNumber, otp })}
-        //       disabled={otp.length < 4 ? true : false }
-        //     > */}
+            <TouchableOpacity style={[buttonDisabled, styles.verifyPhoneNumberButton]}
+            onPress={() => signIn({ phoneNumber, otp })}
+               disabled={otp.length < 4 ? true : false }
+             >
               <Text style={styles.verifyPhoneNumberButtonText}>VERIFY</Text>
             </TouchableOpacity>
           </View>

@@ -6,7 +6,7 @@ import { styles } from '../StyleSheet';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useMediaQuery } from 'react-responsive'
 
-export default function LandingScreen (){
+export default function LandingScreen ({navigation}){
     const windowWidth = Dimensions.get('window').width;
     const windowHeight = Dimensions.get('window').height;
     const isDesktopOrLaptop = useMediaQuery({

@@ -369,7 +369,9 @@ height: 60,
     height: 150,
     resizeMode:'contain',
     alignSelf: "center",
-    marginTop:5
+    marginTop:5,
+    borderColor: 'red',
+    borderWidth: 1
 
 
   }

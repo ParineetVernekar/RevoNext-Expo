@@ -1,11 +1,13 @@
 const { withExpo } = require('@expo/next-adapter');
 const withPlugins = require('next-compose-plugins');
-const withTM = require('next-transpile-modules')(['react-native-web']);
+// const withTM = require('next-transpile-modules')(['react-native-web']);
 const withFonts = require('next-fonts');
 const withImages = require('next-images');
 
 const nextConfig = {};
-
+const withTM = require('next-transpile-modules')([
+  '@koale/useworker'
+]);
 
 module.exports = withPlugins(
 
@@ -13,9 +15,7 @@ module.exports = withPlugins(
   withFonts({
     projectRoot: __dirname,
   }),
-  withImages({
-    projectRoot: __dirname,
-  }),
+  withImages(),
   nextConfig
   
   

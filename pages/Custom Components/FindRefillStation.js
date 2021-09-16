@@ -3,18 +3,18 @@ import {Text, View, TouchableOpacity, Image, Platform } from 'react-native';
 import { styles } from '../StyleSheet';
 import { SvgUri } from 'react-native-svg';
 
-export default function FindRefillStation({ destination}){
+export default function FindRefillStation({navigation, destination}){
     return(
         <TouchableOpacity
                         style={styles.addBottleButton}
                         //
 
                         onPress={() => {
-                            // if( Platform.OS === 'web'){
-                            //     window.open('https://www.google.com/maps/d/u/0/edit?mid=1NN1dsbUOVR2QFLT-b-s_CFCD1-8HdJJ0&usp=sharing').focus();                                       
-                            // } else{
-                                // navigation.navigate(destination)
-                            // }
+                            if( Platform.OS === 'web'){
+                                window.open('https://www.google.com/maps/d/u/0/edit?mid=1NN1dsbUOVR2QFLT-b-s_CFCD1-8HdJJ0&usp=sharing').focus();                                       
+                            } else{
+                                navigation.navigate(destination)
+                            }
                         
                         }}
                     >
