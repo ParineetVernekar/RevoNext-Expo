@@ -1,22 +1,12 @@
 // @generated: @expo/next-adapter@2.1.52
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
+import LandingScreen from './Sign Up Flow/LandingScreen';
+import OTPScreen from './Sign Up Flow/EnterOTPScreen';
+import EnterPhoneNumberScreen from './Sign Up Flow/EnterPhoneNumberScreen';
+import HomeScreen from './Main Flow/HomeScreen';
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Welcome to Expo + Next.js 👋</Text>
-    </View>
-  );
+  return(
+    <HomeScreen/>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 16,
-  },
-});

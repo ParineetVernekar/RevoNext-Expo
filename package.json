@@ -1,11 +1,19 @@
 {
   "dependencies": {
+    "@react-navigation/native": "^6.0.2",
     "expo": "~42.0.0",
+    "expo-linear-gradient": "^9.2.0",
+    "expo-status-bar": "^1.0.4",
     "next": "^11.0.1",
+    "next-fonts": "^1.5.1",
+    "next-images": "^1.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
-    "react-native-web": "^0.17.1"
+    "react-native-paper": "^4.9.2",
+    "react-native-svg": "^12.1.1",
+    "react-native-web": "^0.17.1",
+    "react-responsive": "^9.0.0-beta.4"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
