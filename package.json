@@ -16,10 +16,13 @@
     "react-dom": "^17.0.2",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
     "react-native-paper": "^4.9.2",
+    "react-native-screens": "^3.7.2",
     "react-native-svg": "^12.1.1",
     "react-native-web": "^0.17.1",
     "react-native-webview": "^11.13.0",
-    "react-responsive": "^9.0.0-beta.4"
+    "react-responsive": "^9.0.0-beta.4",
+    "run-ios": "^0.3.5",
+    "start": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -35,5 +38,6 @@
     "eject": "expo eject",
     "build": "next build"
   },
+  "babel": { "plugins": [  [ "@babel/plugin-proposal-class-properties", { "loose": true } ] ] },
   "private": true
 }

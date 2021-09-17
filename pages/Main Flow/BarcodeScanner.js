@@ -6,14 +6,14 @@ import { styles } from '../StyleSheet';
 
 export default function CustomBarcodeScanner({navigation}){
   const [hasPermission, setHasPermission] = useState(null);
-  const [type, setType] = useState(Camera.Constants.Type.back);
+  // const [type, setType] = useState(Camera.Constants.Type.back);
 
-  useEffect(() => {
-    (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
-      setHasPermission(status === 'granted');
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     const { status } = await Camera.requestPermissionsAsync();
+  //     setHasPermission(status === 'granted');
+  //   })();
+  // }, []);
   
    const handleBarCodeScanned = ({ type, data }) => {
 
